@@ -5,7 +5,7 @@
 
 	let screenWidth;
 	let films = [
-			['Паразиты', 'posters/parasites.jpg'],
+			['Паразиты', 'posters/parasites.jpg', 'Описание фильма', ['Драма', 'Триллер', 'Комедия']],
 			// ['Паразиты', 'posters/parasites.jpg'],
 			// ['Паразиты', 'posters/parasites.jpg'],
 			// ['Паразиты', 'posters/parasites.jpg'],
@@ -20,7 +20,7 @@
 <main>
 	<section style="--columns-amount: {Math.floor((screenWidth - 30) / 225)}">
 		{#each films as film}
-			<Card title="{film[0]}" poster_path="{film[1]}"/>
+			<Card title="{film[0]}" poster_path="{film[1]}" description="{film[2]}" tags="{film[3]}"/>
 		{/each}
 	</section>
 </main>
@@ -38,8 +38,12 @@
 
 		--yellow: #FFCF00;
 		--blue: #5C95FF;
+		--text-blue-span: #ADCAFF;
 		--cyan: #81F7E5;
 		--text-cyan: #C5FBF3;
+		--text-cyan-p: #ECFEFB;
+		--text-cyan-span: #87DEE8;
+
 		--pink: #EF476F;
 
 		--main-font: 'Roboto Condensed', sans-serif;

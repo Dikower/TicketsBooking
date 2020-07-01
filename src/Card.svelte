@@ -4,7 +4,10 @@
     export let poster_path = './';
     export let title = 'Loreum';
     export let description = 'Loreum ipsum';
-    let detailed = true;
+    export let tags = ['Loreum', 'ipsum'];
+    export let mark = 9.7;
+
+    let detailed = false;
 
     let card;
     let background;
@@ -22,9 +25,20 @@
 </script>
 
 
-<div class="component" on:click={() => detailed = true}>
+<div class="preview-card" on:click={() => detailed = true}>
     <img class="preview_poster" alt="Постер" src="{poster_path}">
-    <h1 class="card-title">{title}</h1>
+    <div class="preview-title-mark-block">
+        <h1 class="preview-title">{title}</h1>
+        <div class="preview-mark">
+            <h1 class="mark">{mark}</h1>
+            <img class="star" alt="*" src="star.svg" type="svg">
+        </div>
+    </div>
+    <div class="preview-tags-block">
+        {#each tags as tag}
+            <span class="preview-tag">{tag}</span>
+        {/each}
+    </div>
 </div>
 
 {#if detailed}
@@ -32,8 +46,10 @@
         <div bind:this={card} class="detailed-card">
             <div class="content">
                 <img class="poster" alt="Постер" src="{poster_path}">
-                <h1 class="detailed-card-title">{title}</h1>
-                <p>{description}</p>
+                <div class="text-block">
+                    <h1 class="detailed-title">{title}</h1>
+                    <p class="detailed-description">{description}</p>
+                </div>
             </div>
             <button class="cancel-button" on:click={() => detailed = false}>
                 <svg width=16 height=16>
@@ -45,6 +61,10 @@
     </div>
 {/if}
 <style>
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
     .background {
         position: absolute;
         top: 0;
@@ -68,6 +88,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        border-radius: 10px;
     }
 
     .cancel-button {
@@ -99,13 +120,32 @@
         width: auto;
         height: 100%;
         align-self: flex-start;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
     }
-    .detailed-card-title {
+
+    .text-block {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0 0 30px;
+        height: 100%;
+    }
+
+    .detailed-title {
         font-size: 3em;
         font-family: var(--main-font);
         font-weight: 500;
-        margin: 30px 0 0 30px;
+        padding: 0;
+        margin: 0;
         color: var(--text-cyan);
+    }
+
+    .detailed-description {
+        height: 100px;
+        font-size: 1em;
+        color: var(--text-cyan-p);
+        /*text-align: justify;*/
+        text-overflow: ellipsis;
     }
 
 
@@ -116,25 +156,58 @@
         border-top-right-radius: 5px;
     }
 
-    .component {
+    .preview-card {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         width: 200px;
-        height: 345px;
+        height: 360px;
         transition: color 0.5s ease, width 0.5s ease, height 0.5s ease;
         background: var(--normal-dark-color);
         box-shadow: 0 0 20px 1px var(--most-dark-color-shadow);
         border-radius: 10px;
     }
+    .preview-title-mark-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% - 20px);
+        margin: 10px 0 0 10px;
 
-    .card-title {
-        font-size: 0.98em;
-        font-family: var(--main-font);
-        font-weight: 500;
-        padding: 10px;
-        margin: 0;
-        color: var(--text-cyan);
     }
+    .preview-title {
+        font-family: var(--main-font);
+        color: var(--text-cyan);
+        font-size: 1.1em;
+        font-weight: 500;
+        text-align: justify;
+    }
+    .preview-tags-block{
+        margin-left: 10px;
+
+    }
+    .preview-tag {
+        margin-right: 4px;
+        font-size: 0.8em;
+        color: var(--text-blue-span);
+    }
+    .preview-mark {
+        width: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .star {
+        width: 20px;
+        height: 20px;
+    }
+    .mark {
+        font-size: 1em;
+        color: var(--pink);
+        font-weight: 500;
+    }
+
 
 </style>
