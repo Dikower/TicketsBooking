@@ -205,7 +205,7 @@
     }
     .mark {
         font-size: 1em;
-        color: var(--pink);
+        color: var(--cyan);
         font-weight: 500;
     }
 
