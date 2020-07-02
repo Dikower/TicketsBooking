@@ -39,12 +39,13 @@
 		--yellow: #FFCF00;
 		--blue: #5C95FF;
 		--text-blue-span: #ADCAFF;
+		--text-blue-light: #D6E4FF;
 		--cyan: #81F7E5;
 		--text-cyan: #C5FBF3;
 		--text-cyan-p: #ECFEFB;
 		--text-cyan-span: #87DEE8;
 
-		--pink: #EF476F;
+		--pink: #EF436B;
 
 		--main-font: 'Roboto Condensed', sans-serif;
 
