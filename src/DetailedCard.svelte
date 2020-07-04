@@ -1,6 +1,8 @@
 <script>
     import { getContext } from 'svelte'
     import { fade, fly } from 'svelte/transition'
+    import Form from './Form.svelte'
+
     const {poster_path, title, tags, mark, schedule, description} = getContext('film_info')
     var detailed_store = getContext('detailed_store');
     let background;
@@ -13,9 +15,10 @@
     <div class="card">
         <div class="content">
             <img class="poster" alt="Постер" src="{poster_path}">
-            <div class="text-block">
+            <div class="form-block">
                 <h1 class="title">{title}</h1>
                 <p class="description">{description}</p>
+                <Form/>
             </div>
         </div>
         <button class="cancel-button" on:click={() => detailed_store.set(false)}>
@@ -88,11 +91,12 @@
         border-top-left-radius: 10px;
     }
 
-    .text-block {
+    .form-block {
         display: flex;
         flex-direction: column;
         margin: 30px 0 0 30px;
         height: 100%;
+        width: 100%;
     }
 
     .title {
