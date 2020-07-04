@@ -49,7 +49,7 @@
 
 		--main-font: 'Roboto Condensed', sans-serif;
 
-		background: var(--cyan);
+		background: var(--most-dark-color);
 	}
 	main {
 		display: flex;
