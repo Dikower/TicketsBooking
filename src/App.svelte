@@ -18,7 +18,7 @@
 <svelte:window bind:innerWidth={screenWidth}/>
 
 <main>
-	<section style="--columns-amount: {Math.floor((screenWidth - 30) / 225)}">
+	<section style="--columns-amount: {Math.floor((Math.min(screenWidth, 1440) - 30) / 225)}">
 		{#each films as film}
 			<Card title="{film[0]}" poster_path="{film[1]}" description="{film[2]}" tags="{film[3]}" mark="{film[4]}"/>
 		{/each}
