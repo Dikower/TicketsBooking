@@ -42,9 +42,7 @@
 </script>
 
 
-<div class="preview-card" class:hovered
-     on:mouseenter={() => hovered = true}
-     on:mouseleave={() => hovered = false}>
+<div class="preview-card" class:hovered on:click={enter_detailed}>
 
     <!--on:hover content-->
     <div class="preview-poster-block">
@@ -132,7 +130,7 @@
     /* Detailed card */
 
     .background {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 100%;
