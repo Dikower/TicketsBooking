@@ -1,6 +1,7 @@
 <script>
     function printForm() {
-        console.log('Hello!');
+        console.log('Телефон:', phoneInput);
+        console.log('ФИО:', nameInput);
     }
 
     let phoneInput = '';
