@@ -15,8 +15,9 @@
         ["3 июля", ['10:15', '16:35', '19:55']],
         ["4 июля", ['10:15', '16:35', '19:55']],
     ];
-    setContext('film_info', {poster_path, title, tags, mark, schedule, description})
-    setContext('detailed_store', writable(false))
+
+    setContext('film_info', {poster_path, title, tags, mark, schedule, description});
+    setContext('detailed_store', writable(true));
 </script>
 
 <PreviewCard/>

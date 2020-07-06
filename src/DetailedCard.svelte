@@ -1,9 +1,9 @@
 <script>
     import { getContext } from 'svelte'
-    import { fade, fly } from 'svelte/transition'
+    import { fade } from 'svelte/transition'
     import Form from './Form.svelte'
 
-    const {poster_path, title, tags, mark, schedule, description} = getContext('film_info')
+    const {poster_path, title, tags, mark, schedule, description} = getContext('film_info');
     var detailed_store = getContext('detailed_store');
     let background;
 </script>
@@ -15,11 +15,7 @@
     <div class="card">
         <div class="content">
             <img class="poster" alt="Постер" src="{poster_path}">
-            <div class="form-block">
-                <h1 class="title">{title}</h1>
-                <p class="description">{description}</p>
-                <Form/>
-            </div>
+            <Form/>
         </div>
         <button class="cancel-button" on:click={() => detailed_store.set(false)}>
             <svg width=16 height=16>
@@ -47,8 +43,8 @@
 
     .card {
         width: 90%;
-        max-width: 1150px;
-        height: 500px;
+        max-width: 1000px;
+        height: 400px;
         background: var(--normal-dark-color);
         box-shadow: 0 0 20px 5px var(--normal-dark-color-shadow);
         z-index: 21;
@@ -59,10 +55,13 @@
     }
 
     .cancel-button {
+        position: relative;
         width: 32px;
         height: 32px;
         margin-top: 5px;
         margin-right: 5px;
+        /*top: 0;*/
+        /*right: 0;*/
     }
 
     .cancel-button:active {
@@ -78,8 +77,9 @@
     .content {
         display: flex;
         flex-direction: row;
-        justify-self: flex-start;
-        width: 90%;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
     }
 
     .poster {
@@ -89,28 +89,5 @@
         align-self: flex-start;
         border-bottom-left-radius: 10px;
         border-top-left-radius: 10px;
-    }
-
-    .form-block {
-        display: flex;
-        flex-direction: column;
-        margin: 30px 0 0 30px;
-        height: 100%;
-        width: 100%;
-    }
-
-    .title {
-        font-size: 3em;
-        font-weight: 500;
-        padding: 0;
-        margin: 0;
-        color: var(--text-cyan);
-    }
-
-    .description {
-        height: 100px;
-        font-size: 1em;
-        color: var(--text-cyan-p);
-        text-overflow: ellipsis;
     }
 </style>

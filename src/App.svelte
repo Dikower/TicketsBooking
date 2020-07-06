@@ -29,7 +29,7 @@
 
 <body>
 <main>
-    <section style="--columns-amount: {Math.floor((Math.min(screenWidth, 1440) - 30) / 225)}">
+    <section style="--columns-amount: {Math.floor((Math.min(screenWidth, 1440) - 30) / 325)}">
         {#each films as film}
             <Card title="{film[0]}" poster_path="{film[1]}" description="{film[2]}" tags="{film[3]}" mark="{film[4]}"/>
         {/each}
@@ -104,7 +104,7 @@
         /*align-items: center;*/
         justify-items: center;
         grid-template-columns: repeat(var(--columns-amount), 1fr);
-        gap: 20px 30px;
+        gap: 30px 20px;
         height: 100%;
         width: 100%;
         margin: 40px;
