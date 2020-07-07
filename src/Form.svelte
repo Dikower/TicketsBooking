@@ -18,7 +18,7 @@
     let smallerPhone = phoneInput !== '';
     let smallerName = nameInput !== '';
 
-    let chosenDate = true;
+    let chosenDate = undefined;
     let chosenSeats = [];
     let animationPlay = false;
 
