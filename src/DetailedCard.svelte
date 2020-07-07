@@ -44,7 +44,7 @@
     .card {
         width: 90%;
         max-width: 1000px;
-        height: 400px;
+        height: 500px;
         background: var(--normal-dark-color);
         box-shadow: 0 0 20px 5px var(--normal-dark-color-shadow);
         z-index: 21;

@@ -1,6 +1,7 @@
 <script>
     import {getContext} from 'svelte'
 
+    export let chosen = undefined;
     let page = 0;
     let data = getContext('film_info');
     let schedule = data['schedule'];
@@ -11,8 +12,6 @@
             page = new_page;
         }
     }
-
-    let openedCinema = false;
 </script>
 
 
@@ -26,7 +25,7 @@
     <div class="sessions-block">
         <h2 class="date">{schedule[page][0]}</h2>
         {#each schedule[page][1] as session}
-            <button class="time-button" type="button" on:click={() => openedCinema = true}>{session}</button>
+            <button class="time-button" type="button" on:click={() => chosen = [schedule[page][0], session]}>{session}</button>
         {/each}
     </div>
     <button type="button" class="arrow rightArrow" class:hidden={page === schedule.length-1}
@@ -50,8 +49,7 @@
     }
 
     .page-block {
-        width: 50%;
-        height: 100%;
+        /*height: 100%;*/
         display: flex;
         flex-direction: row;
         align-items: center;

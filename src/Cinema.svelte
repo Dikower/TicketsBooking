@@ -3,7 +3,7 @@
     import { writable } from 'svelte/store'
 
     export let width = 10;
-    export let height = 10;
+    export let height = 7;
     export let seatSize = 20;
     export let gridGap = 5;
     export let chosenSeats = [];
