@@ -87,6 +87,7 @@
             scrollbar-width: thin; /* "auto" or "thin"  */
             scrollbar-color: var(--pink) transparent; /* scroll thumb & track */
             scroll-bar-border: 30px;
+            padding: 0;
         }
     }
 

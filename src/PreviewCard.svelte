@@ -17,7 +17,7 @@
     <img class:hovered class="poster" alt="Постер" src="{poster_path}">
 
     <!--on:hover content-->
-    {#if hovered}
+    {#if hovered && document.documentElement.clientWidth > 980}
         <div class="info-block" transition:fade>
             <div class="first-row">
                 <h1 class="title">{title}</h1>
@@ -30,10 +30,82 @@
             <p class="description">{description}</p>
         </div>
     {/if}
-
+     <div class="preview-title-mark-block">
+        <h1 class="preview-title">{title}</h1>
+        <div class="preview-mark">
+            <h1 class="mark">{mark}</h1>
+            <img class="star" alt="*" src="star.svg" type="svg">
+        </div>
+    </div>
+    <div class="preview-tags-block">
+        {#each tags as tag}
+            <span class="preview-tag">{tag}</span>
+        {/each}
+    </div>
 </div>
 
 <style>
+    @media all and (max-width: 980px) {
+        .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 200px;
+        height: 360px;
+        transition: all 0.5s ease;
+        background: var(--normal-dark-color);
+        box-shadow: 0 0 20px 1px var(--most-dark-color-shadow);
+        border-radius: 10px;
+    }
+        .preview-title-mark-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% - 20px);
+        margin: 10px 0 0 10px;
+    }
+    .preview-title {
+        font-family: var(--main-font);
+        color: var(--text-cyan);
+        font-size: 1.1em;
+        font-weight: 500;
+        text-align: justify;
+    }
+    .preview-tags-block {
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    .preview-tag {
+        margin-right: 4px;
+        font-size: 0.8em;
+        color: var(--text-blue-span);
+    }
+    .preview-mark {
+        width: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .star {
+        width: 20px;
+        height: 20px;
+    }
+    .mark {
+        font-size: 1em;
+        color: var(--pink);
+        font-weight: 500;
+    }
+    }
+    @media all and (min-width: 980px) {
+        .preview-title-mark-block {
+            display: none;
+        }
+        .preview-tags-block {
+            display: none;
+        }
+    }
     .poster {
         width: 100%;
         border-radius: 5px;
