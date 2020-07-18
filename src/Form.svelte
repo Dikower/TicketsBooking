@@ -102,11 +102,11 @@
             width: 70%;
         }
         .cinema-wrapper {
-            margin: 40px 0;
+            margin: 0;
             align-items: center;
         }
         .title {
-            margin-bottom: 15px;
+            display: none;
         }
     }
     @media all and (min-width: 700px) {
@@ -164,6 +164,7 @@
         display: flex;
         flex-direction: column;
         width: 50%;
+        min-width: 200px;
         height: 100%;
         align-items: center;
         justify-content: center;
@@ -203,8 +204,8 @@
         border-bottom: 2px solid var(--cyan);
         color: var(--text-cyan-p);
         width: 100%;
+        outline: none;
     }
-
     input ~ span {
         position: absolute;
         transition: all .5s ease;

@@ -32,8 +32,9 @@
         .card {
             display: flex;
             flex-direction: row;
-            height: 700px;
-            margin-top: 70px;
+            height: 520px;
+            margin-top: 30px;
+            padding-top: 10px;
         }
         .content {
             width: 100%;
@@ -80,6 +81,7 @@
 
     .card {
         max-width: 1000px;
+        min-width: 300px;
         background: var(--normal-dark-color);
         box-shadow: 0 0 20px 5px var(--normal-dark-color-shadow);
         z-index: 21;

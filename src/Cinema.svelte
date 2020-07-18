@@ -29,19 +29,19 @@
 <style>
     @media all and (max-width: 700px) {
         .component {
-            --height-grid-px: calc(((var(--seatSize) + var(--gridGap)) * var(--height) + var(--gridGap)) * 0.7);
-            --width--grid-px: calc(((var(--seatSize) + var(--gridGap)) * var(--width) - var(--gridGap)) * 0.7);
+            --height-grid-px: calc(((var(--seatSize) + var(--gridGap)) * var(--height) + var(--gridGap)) * 0.75);
+            --width--grid-px: calc(((var(--seatSize) + var(--gridGap)) * var(--width) - var(--gridGap)) * 0.75);
             width: var(--width--grid-px);
             height: var(--height--grid-px);
         }
         .grid {
-            grid-template-rows: repeat(var(--height), calc(var(--seatSize) * 0.7));
-            grid-template-columns: repeat(var(--width), calc(var(--seatSize) * 0.7));
+            grid-template-rows: repeat(var(--height), calc(var(--seatSize) * 0.75));
+            grid-template-columns: repeat(var(--width), calc(var(--seatSize) * 0.75));
             grid-gap: calc(var(--gridGap) * 0.8);
         }
         .checkbox > input {
-            height: calc(var(--seatSize) * 0.7);
-            width: calc(var(--seatSize) * 0.7);
+            height: calc(var(--seatSize) * 0.75);
+            width: calc(var(--seatSize) * 0.75);
         }
     }
 
@@ -70,7 +70,6 @@
         background: var(--most-dark-color);
         padding: 20px;
         border-radius: 20px;
-
     }
 
     hr {
