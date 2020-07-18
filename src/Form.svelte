@@ -12,7 +12,7 @@
         console.log('ФИО:', nameInput);
     }
 
-    let phoneInput = '';
+    let phoneInput = '';//
     let nameInput = '';
 
     let smallerPhone = phoneInput !== '';
