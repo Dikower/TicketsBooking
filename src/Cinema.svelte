@@ -27,15 +27,46 @@
     </div>
 </div>
 <style>
-    .component {
-        --height-grid-px: calc((var(--seatSize) + var(--gridGap)) * var(--height) + var(--gridGap));
-        --width--grid-px: calc((var(--seatSize) + var(--gridGap)) * var(--width) - var(--gridGap));
+    @media all and (max-width: 700px) {
+        .component {
+            --height-grid-px: calc(((var(--seatSize) + var(--gridGap)) * var(--height) + var(--gridGap)) * 0.7);
+            --width--grid-px: calc(((var(--seatSize) + var(--gridGap)) * var(--width) - var(--gridGap)) * 0.7);
+            width: var(--width--grid-px);
+            height: var(--height--grid-px);
+        }
+        .grid {
+            grid-template-rows: repeat(var(--height), calc(var(--seatSize) * 0.7));
+            grid-template-columns: repeat(var(--width), calc(var(--seatSize) * 0.7));
+            grid-gap: calc(var(--gridGap) * 0.8);
+        }
+        .checkbox > input {
+            height: calc(var(--seatSize) * 0.7);
+            width: calc(var(--seatSize) * 0.7);
+        }
+    }
 
+    @media all and (min-width: 700px) {
+        .component {
+            --height-grid-px: calc((var(--seatSize) + var(--gridGap)) * var(--height) + var(--gridGap));
+            --width--grid-px: calc((var(--seatSize) + var(--gridGap)) * var(--width) - var(--gridGap));
+            width: var(--width--grid-px);
+            height: var(--height--grid-px);
+        }
+        .grid {
+            grid-template-rows: repeat(var(--height), var(--seatSize));
+            grid-template-columns: repeat(var(--width), var(--seatSize));
+            grid-gap: var(--gridGap);
+        }
+        .checkbox > input {
+            height: var(--seatSize);
+            width: var(--seatSize);
+        }
+        }
+
+    .component {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        width: var(--width--grid-px);
-        height: var(--height--grid-px);
         background: var(--most-dark-color);
         padding: 20px;
         border-radius: 20px;
@@ -51,11 +82,6 @@
 
     .grid {
         display: grid;
-        grid-template-rows: repeat(var(--height), var(--seatSize));
-        grid-template-columns: repeat(var(--width), var(--seatSize));
-        grid-gap: var(--gridGap);
-
-
     }
 
     .checkbox {
@@ -69,9 +95,6 @@
         -moz-appearance: none;
         -o-appearance: none;
         appearance: none;
-
-        height: var(--seatSize);
-        width: var(--seatSize);
         border: 1px solid var(--text-cyan-span);
         border-radius: 4px;
         outline: none;

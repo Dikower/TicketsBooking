@@ -4,7 +4,7 @@
     import Form from './Form.svelte'
 
     const {poster_path, title, tags, mark, schedule, description} = getContext('film_info');
-    var detailed_store = getContext('detailed_store');
+    let detailed_store = getContext('detailed_store');
     let background;
 </script>
 
@@ -28,6 +28,43 @@
 {/if}
 
 <style>
+    @media all and (max-width: 700px) {
+        .card {
+            display: flex;
+            flex-direction: row;
+            height: 700px;
+            margin-top: 70px;
+        }
+        .content {
+            width: 100%;
+        }
+    }
+    @media all and (max-width: 880px) {
+        .poster {
+            display: none;
+        }
+        .card {
+            width: 80%;
+        }
+    }
+    @media all and (max-width: 980px) and (min-width: 880px){
+    .card {
+        width: 100%;
+    }
+    }
+    @media all and (min-width: 980px) {
+        .card {
+            width: 90%;
+        }
+    }
+    @media all and (min-width: 700px) {
+        .card {
+            display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+            height: 500px;
+        }
+    }
     .background {
         position: fixed;
         top: 0;
@@ -42,20 +79,14 @@
     }
 
     .card {
-        width: 90%;
         max-width: 1000px;
-        height: 500px;
         background: var(--normal-dark-color);
         box-shadow: 0 0 20px 5px var(--normal-dark-color-shadow);
         z-index: 21;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         border-radius: 10px;
     }
 
     .cancel-button {
-        position: relative;
         width: 32px;
         height: 32px;
         margin-top: 5px;

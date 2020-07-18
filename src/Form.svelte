@@ -93,8 +93,35 @@
 </div>
 
 <style>
+    @media all and (max-width: 700px) {
+        form {
+            flex-direction: column-reverse;
+            margin-left: 32px;
+        }
+        .animation-wrapper {
+            width: 70%;
+        }
+        .cinema-wrapper {
+            margin: 40px 0;
+            align-items: center;
+        }
+        .title {
+            margin-bottom: 15px;
+        }
+    }
+    @media all and (min-width: 700px) {
+        form {
+            flex-direction: row;
+        }
+        .animation-wrapper {
+            width: 50%;
+        }
+        .title {
+            margin: 0;
+        }
+    }
     .component {
-        margin-left: 40px;
+        margin-left: 5px;
         display: flex;
         width: 100%;
         height: 90%;
@@ -121,7 +148,6 @@
     }
     .animation-wrapper {
         position: relative;
-        width: 50%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -131,6 +157,7 @@
         position: absolute;
         display: flex;
         justify-content: center;
+
     }
 
     .input-wrapper {
@@ -160,8 +187,8 @@
         width: 100%;
         height: 100%;
         display: flex;
-        flex-direction: row;
         align-items: center;
+        text-align: center;
     }
 
 
@@ -215,7 +242,6 @@
         font-size: 3em;
         font-weight: 500;
         padding: 0;
-        margin: 0;
         color: var(--text-cyan);
     }
 </style>

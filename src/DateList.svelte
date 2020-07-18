@@ -38,6 +38,11 @@
 </div>
 
 <style>
+    @media all and (max-width: 700px) {
+        .page-block {
+            margin: 50px 0 30px 0;
+        }
+    }
     .hidden {
         opacity: 0
     }
@@ -58,6 +63,7 @@
 
     .sessions-block {
         height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
