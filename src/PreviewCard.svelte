@@ -9,11 +9,11 @@
 
     let hovered = false;
 </script>
-
 <div class="card" class:hovered
      on:click={handleClick}
      on:mouseenter={() => hovered = true}
-     on:mouseleave={() => hovered = false}>
+     on:mouseleave={() => hovered = false}
+             transition:fade>
     <img class:hovered class="poster" alt="Постер" src="{poster_path}">
 
     <!--on:hover content-->

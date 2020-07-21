@@ -1,9 +1,9 @@
 <script>
     import { setContext } from 'svelte'
+    import {getContext} from 'svelte'
     import { writable } from 'svelte/store'
     import PreviewCard from './PreviewCard.svelte'
     import DetailedCard from './DetailedCard.svelte'
-
     export let poster_path = './';
     export let title = 'Loreum';
     export let description = 'Loreum ipsum';
@@ -22,7 +22,6 @@
 
 <PreviewCard/>
 <DetailedCard/>
-
 <style>
     :global(h1) {
         margin: 0;

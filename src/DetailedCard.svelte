@@ -96,7 +96,9 @@
         /*top: 0;*/
         /*right: 0;*/
     }
-
+    .cancel-button:hover {
+        cursor: pointer;
+    }
     .cancel-button:active {
         background: inherit;
     }

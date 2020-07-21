@@ -230,6 +230,7 @@
 
     .submit:hover {
         background: var(--most-dark-color);
+        cursor: pointer;
     }
 
     .submit:active, .submit:focus {

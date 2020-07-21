@@ -82,6 +82,7 @@
 
     .time-button:hover {
         border-color: var(--blue);
+        cursor: pointer;
     }
 
     .arrow {
@@ -110,7 +111,9 @@
     .arrow:active {
         background: var(--most-dark-color);
     }
-
+    .arrow:hover {
+        cursor: pointer;
+    }
     line {
         color: var(--text-cyan-p);
         stroke: currentColor;

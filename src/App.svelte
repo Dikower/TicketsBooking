@@ -4,8 +4,13 @@
 
 <script>
     import Card from './Card.svelte';
-
+    import Header from './Header.svelte';
+    let chosen_genre;
     let screenWidth;
+    let genres = [
+        'Все фильмы', 'Драма', 'Триллер', 'Комедия', 'Ужастик', 'Детектив', 'Боевик', 'Фэнтези', 'Мюзикл', 'Фантастика', 'Мультфильм'
+    ];
+    let counter = 1;
     let films = [
         ['Паразиты', 'posters/parasites.jpg', 'Обычное корейское семейство Кимов жизнь не балует. Приходится жить в сыром грязном полуподвале, воровать интернет у соседей и перебиваться случайными подработками. Однажды друг сына семейства, уезжая на стажировку за границу, предлагает тому заменить его и поработать репетитором у старшеклассницы в богатой семье Пак.', ['Драма', 'Триллер', 'Комедия'], 8.3],
         ['Паразиты', 'posters/parasites.jpg', 'Описание фильма', ['Драма', 'Триллер', 'Комедия'], 8.3],
@@ -23,15 +28,16 @@
         ['Паразиты', 'posters/parasites.jpg', 'Описание фильма', ['Драма', 'Триллер', 'Комедия'], 8.3],
         ['Паразиты', 'posters/parasites.jpg', 'Описание фильма', ['Драма', 'Триллер', 'Комедия'], 8.3],
     ];
-
 </script>
 <svelte:window bind:innerWidth={screenWidth}/>
-
 <body>
 <main>
+    <Header genres={genres} bind:chosen_genre={chosen_genre}/>
     <section style="--columns-amount: {Math.floor((Math.min(screenWidth, 1440) - 30) / 325)}">
         {#each films as film}
-            <Card title="{film[0]}" poster_path="{film[1]}" description="{film[2]}" tags="{film[3]}" mark="{film[4]}"/>
+            {#if chosen_genre === 'Все фильмы' || film[3].indexOf(chosen_genre) !== -1}
+            <Card title="{film[0]}" poster_path="{film[1]}" description="{film[2]}" tags="{film[3]}" mark="{film[4]}" chosen_genre="{chosen_genre}"/>
+                {/if}
         {/each}
     </section>
 </main>
@@ -108,7 +114,14 @@
         gap: 30px 20px;
         height: 100%;
         width: 100%;
-        margin: 40px;
+        margin: 20px 40px;
     }
-
+.invisible {
+    display: none;
+}
+    .error_message {
+        color: var(--text-cyan-p);
+        font-size: 25px;
+        text-align: center;
+    }
 </style>
