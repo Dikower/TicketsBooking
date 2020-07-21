@@ -92,6 +92,7 @@
         border-radius: 20px;
     }
     .genre {
+        text-align: center;
         margin: 15px 10px 5px 15px;
         font-family: var(--main-font);
         color: var(--text-blue-light);
