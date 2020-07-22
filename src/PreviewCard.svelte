@@ -97,6 +97,9 @@
         color: var(--pink);
         font-weight: 500;
     }
+    .poster {
+            height: 400px;
+        }
     }
     @media all and (min-width: 980px) {
         .preview-title-mark-block {
@@ -104,6 +107,9 @@
         }
         .preview-tags-block {
             display: none;
+        }
+        .poster {
+            height: var(--card-height);
         }
     }
     .poster {
